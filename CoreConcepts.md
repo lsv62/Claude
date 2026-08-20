@@ -88,3 +88,5 @@ A skill is a markdown file containing knowledge, workflows, or instructions. You
 | Key benefit           | Share content across contexts	Context isolation. | Work happens separately, only summary returns                  |
 | Context window impact | Adds to your main window                         | Uses a separate window with its own input and output tokens    |
 | Best for              | Reference material, invocable workflows          | Tasks that read many files, parallel work, specialized workers |
+
+## Explore the .claude directory
