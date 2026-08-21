@@ -106,21 +106,21 @@ A skill is a markdown file containing knowledge, workflows, or instructions. You
 
 Most users only edit CLAUDE.md and settings.json.
 
-| File                       | Scope              | Commit | What it does                                                                                             | Reference         |
-| -------------------------- | ------------------ | ------ | -------------------------------------------------------------------------------------------------------- | ----------------- |
-| CLAUDE.md                  | Project and global | ✓      | Instructions loaded every session                                                                        | Memory            |
-| rules/\*.md                | Project and global | ✓      | Topic-scoped instructions, optionally path-gated                                                         | Rules             |
-| settings.json              | Project and global | ✓      | Permissions, hooks, env vars, model defaults                                                             | Settings          |
-| settings.local.json        | Project only       |        | Your personal overrides, gitignored when Claude Code saves a setting to it                               | Settings scopes   |
-| .mcp.json                  | Project only       | ✓      | Team-shared MCP servers                                                                                  | MCP scopes        |
-| .worktreeinclude           | Project only ✓     |        | Gitignored files to copy into new worktrees                                                              | Worktrees         |
-| skills/<name>/SKILL.md     | Project and global | ✓      | Reusable prompts invoked with /name or auto-invoked                                                      | Skills            |
-| commands/\*.md             | Project and global | ✓      | Single-file prompts; same mechanism as skills                                                            | Skills            |
-| output-styles/\*.md        | Project and global | ✓      | Custom system-prompt sections                                                                            | Output styles     |
-| agents/\*.md               | Project and global | ✓      | Subagent definitions with their own prompt and tools                                                     | Subagents         |
-| workflows/\*.js            | Project and global | ✓ D    | ynamic workflow scripts written by Claude and saved from /workflows; each file becomes a /<name> command | Dynamic workflows |
-| agent-memory/<name>/ P     | roject and global  | ✓      | Persistent memory for subagents                                                                          | Persistent memory |
-| ~/.claude.json             | Global only        |        | App state, OAuth, UI toggles, personal MCP servers                                                       | Global config     |
-| projects/<project>/memory/ | Global only        |        | Auto memory: Claude’s notes to itself across sessions                                                    | uto memory        |
-| keybindings.json           | Global only        |        | Custom keyboard shortcuts                                                                                | Keybindings       |
-| themes/\*.json             | Global only        |        | Custom color themes                                                                                      | ustom themes      |
+| File                       | Scope              | Commit | What it does                                                                                              | Reference         |
+| -------------------------- | ------------------ | ------ | --------------------------------------------------------------------------------------------------------- | ----------------- |
+| CLAUDE.md                  | Project and global | ✓      | Instructions loaded every session                                                                         | Memory            |
+| rules/\*.md                | Project and global | ✓      | Topic-scoped instructions, optionally path-gated                                                          | Rules             |
+| settings.json              | Project and global | ✓      | Permissions, hooks, env vars, model defaults                                                              | Settings          |
+| settings.local.json        | Project only       |        | Your personal overrides, gitignored when Claude Code saves a setting to it                                | Settings scopes   |
+| .mcp.json                  | Project only       | ✓      | Team-shared MCP servers                                                                                   | MCP scopes        |
+| .worktreeinclude           | Project only ✓     |        | Gitignored files to copy into new worktrees                                                               | Worktrees         |
+| skills/<name>/SKILL.md     | Project and global | ✓      | Reusable prompts invoked with /name or auto-invoked                                                       | Skills            |
+| commands/\*.md             | Project and global | ✓      | Single-file prompts; same mechanism as skills                                                             | Skills            |
+| output-styles/\*.md        | Project and global | ✓      | Custom system-prompt sections                                                                             | Output styles     |
+| agents/\*.md               | Project and global | ✓      | Subagent definitions with their own prompt and tools                                                      | Subagents         |
+| workflows/\*.js            | Project and global | ✓      | Dynamic workflow scripts written by Claude and saved from /workflows; each file becomes a /<name> command | Dynamic workflows |
+| agent-memory/<name>/ P     | roject and global  | ✓      | Persistent memory for subagents                                                                           | Persistent memory |
+| ~/.claude.json             | Global only        |        | App state, OAuth, UI toggles, personal MCP servers                                                        | Global config     |
+| projects/<project>/memory/ | Global only        |        | Auto memory: Claude’s notes to itself across sessions                                                     | uto memory        |
+| keybindings.json           | Global only        |        | Custom keyboard shortcuts                                                                                 | Keybindings       |
+| themes/\*.json             | Global only        |        | Custom color themes                                                                                       | ustom themes      |
