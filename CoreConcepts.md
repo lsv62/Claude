@@ -124,3 +124,6 @@ Most users only edit CLAUDE.md and settings.json.
 | projects/<project>/memory/ | Global only        |        | Auto memory: Claude’s notes to itself across sessions                                                     | uto memory        |
 | keybindings.json           | Global only        |        | Custom keyboard shortcuts                                                                                 | Keybindings       |
 | themes/\*.json             | Global only        |        | Custom color themes                                                                                       | ustom themes      |
+
+# Explore the context window
+https://code.claude.com/docs/en/context-window
