@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>account.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> or <div class="page"></div> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h2 id="чому-team-а-не-окремі-pro-акаунти">Чому Team, а не окремі Pro-акаунти</h2>
+<ul>
+<li><strong>Team</strong> дає спільний робочий простір, централізоване керування доступом, адміністрування та — що важливо для інженерного/оборонного чи промислового ПЗ — <strong>контрактну гарантію, що ваші дані та код не використовуються для тренування моделей</strong> за замовчуванням контент не використовується для тренування моделей за замовчуванням на плані Claude Team.</li>
+<li>Централізований білінг та адмін-контролі зручні навіть для маленької команди — один рахунок, керування учасниками, спільний контекст проєктів Claude Team — це план для колаборації Anthropic, який дає всій команді доступ до спільних AI-проєктів, конекторів для робочих інструментів та адмін-контролів, що зберігають інституційні знання доступними, а не розрізненими.</li>
+</ul>
+<h2 id="standard-чи-premium-seat">Standard чи Premium seat</h2>
+<p>Це ключове рішення для розробників коду:</p>
+<ul>
+<li><strong>Standard seat</strong> (~$20–25/міс. при річній оплаті): базовий функціонал, трохи більше ліміту використання за сесію, ніж у Pro Standard seats на плані Team пропонують більше використання на п'ятигодинну сесію, ніж план Pro, щоб кожен учасник команди міг отримати те, що йому потрібно від Claude.</li>
+<li><strong>Premium seat</strong> (~$100–125/міс. при річній оплаті): суттєво вищі ліміти й <strong>доступ до Claude Code</strong>, що прямо стосується розробки ПЗ Premium seats включають доступ до Claude Code та збільшене використання, а також Premium seats пропонують у 6,25 раза більше використання за сесію, ніж план Pro.</li>
+</ul>
+<p><strong>Рекомендація:</strong> оскільки йдеться про безпосередню розробку коду (систем керування двигуном — це, найімовірніше, C/C++, embedded, реальний час), варто взяти <strong>Premium seats для тих розробників</strong>, які активно пишуть/рев'юють код через Claude Code, а решту (запасні місця до мінімуму) можна залишити на Standard.</p>
+<h2 id="team-план-1-premium--1-standard">Team план: 1 Premium + 1 Standard</h2>
+<p>Мінімум для Team плану зараз — 2 учасники Team plans require a minimum of two members., тож конфігурація 1 Premium + 1 Standard якраз відповідає порогу входу.</p>
+<h3 id="варіант-a--річна-оплата-платіж-наперед-за-весь-рік">Варіант A — річна оплата (платіж наперед за весь рік)</h3>
+<table>
+<thead>
+<tr>
+<th>Тип</th>
+<th>Ціна/міс</th>
+<th>Разом/рік</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Premium</td>
+<td>$100</td>
+<td>$1 200</td>
+</tr>
+<tr>
+<td>Standard</td>
+<td>$20</td>
+<td>$240</td>
+</tr>
+<tr>
+<td><strong>Разом</strong></td>
+<td>—</td>
+<td><strong>$1 440/рік</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Це відповідає $120/місяць у перерахунку.</p>
+<h3 id="варіант-b--щомісячна-оплата">Варіант B — щомісячна оплата</h3>
+<table>
+<thead>
+<tr>
+<th>Тип</th>
+<th>Ціна/міс</th>
+<th>Разом/рік</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Premium</td>
+<td>$125</td>
+<td>$1 500</td>
+</tr>
+<tr>
+<td>Standard</td>
+<td>$25</td>
+<td>$300</td>
+</tr>
+<tr>
+<td><strong>Разом</strong></td>
+<td>$150/міс</td>
+<td><strong>$1 800/рік</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="підсумок">Підсумок</h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Річна оплата</th>
+<th>Щомісячна оплата</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Разом за рік</strong></td>
+<td><strong>$1 440</strong></td>
+<td><strong>$1 800</strong></td>
+</tr>
+<tr>
+<td><strong>Різниця</strong></td>
+<td>—</td>
+<td>переплата $360/рік</td>
+</tr>
+</tbody>
+</table>
+<p>⚠️ Без податків (ПДВ тощо залежно від вашої юрисдикції); ціни підлягають зміні на розсуд Anthropic — фінальну суму краще звірити на claude.com/pricing перед оформленням.</p>
+<h3 id="реєстрація-team-плану">Реєстрація Team-плану</h3>
+<ul>
+<li><strong>Хто реєструє — стає Primary Owner.</strong> Це повинен бути тімлід або відповідальний за адміністрування, оскільки передача цієї ролі іншому потребує звернення в підтримку Anthropic.</li>
+<li><strong>Учасник не має мати особистого акаунта заздалегідь</strong> — запрошення саме проведе його через реєстрацію/вхід.</li>
+<li><strong>Місце &quot;займається&quot; одразу після відправки запрошення</strong>, навіть якщо людина ще не прийняла його — тож якщо плануєте змінити склад, скасовуйте зайве запрошення у панелі Members, щоб звільнити місце.</li>
+<li>Тип місця (Standard/Premium) для кожної людини обирається при запрошенні, але <strong>потім можна змінити</strong> — просто перейти на вищий/нижчий тип у налаштуваннях учасника (з відповідним перерахунком оплати).</li>
+</ul>
+<h3 id="зміна-вже-зареєстрованого-учасника">Зміна вже зареєстрованого учасника</h3>
+<p>Доступно для <strong>Owner</strong> та <strong>Primary Owner</strong> (роль Admin може керувати учасниками, але без доступу до білінгу) через <strong>Settings → Members</strong> — знайти потрібну людину у списку й обрати відповідну дію:</p>
+<ul>
+<li><strong>Заміна email одного учасника на іншого</strong> робиться простіше через видалення старого й додавання нового — прямої функції &quot;перейменувати&quot; немає, але при повторному додаванні тієї ж людини її історія й акаунт зберігаються.</li>
+<li><strong>Підвищення Standard → Premium</strong> — зручний спосіб реагувати, якщо хтось із розробників регулярно впирається в ліміти використання, не чекаючи на щотижневе скидання.</li>
+<li>Пам'ятайте: <strong>новий тип місця можна обрати лише з тих, що вже куплені</strong> для організації — тобто якщо у вас куплено рівно 1 Premium і 1 Standard, і ви захочете перевести другого учасника на Premium, спершу доведеться докупити ще одне Premium-місце.</li>
+</ul>
+
+</body>
+</html>
